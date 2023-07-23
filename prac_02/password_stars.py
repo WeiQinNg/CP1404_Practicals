@@ -1,3 +1,7 @@
+"""
+CP1404 - Practical 2
+"""
+
 MINIMUM_LENGTH = 5
 
 def main():
