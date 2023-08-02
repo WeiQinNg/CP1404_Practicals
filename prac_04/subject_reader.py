@@ -8,7 +8,7 @@ FILENAME = "subject_data.txt"
 
 def main():
     data = get_data()
-    print(data)
+    print(display_subject_details(data))
 
 
 def get_data():
@@ -27,5 +27,12 @@ def get_data():
         lists.append(parts)
     input_file.close()
     return lists
+
+
+def display_subject_details(data):
+    """Display subject details from each list."""
+    for list in data:
+        print(f"{list[0]} is taught by {list[1]:<12} and has {list[2]:>3} students")
+
 
 main()
