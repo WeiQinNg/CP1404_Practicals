@@ -1,4 +1,7 @@
-
+"""
+CP1404/CP5632 Practical 4
+List warm up
+"""
 
 numbers = [3, 1, 4, 1, 5, 9, 2]
 
