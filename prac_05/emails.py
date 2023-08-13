@@ -6,4 +6,12 @@ Estimate: 25 minutes
 Actual:  minutes
 """
 
-user_email = input("Email: ")
+
+def main():
+    while user_email != "":
+        user_email = input("Email: ")
+        user_name = user_email.split('@')[0].title()
+        print(f"Is your name {user_name}? (Y/n)")
+
+
+main()
