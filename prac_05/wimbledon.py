@@ -9,6 +9,13 @@ FILENAME = "wimbledon.csv"
 
 
 def main():
+    """Read data file and display Wimbledon champions details."""
+    records = get_records(FILENAME)
+
+
+
+
+def get_records(filename):
     """Get records from input file in list of lists form."""
     records = []
     with open(FILENAME, "r", encoding="utf-8-sig") as in_file:
