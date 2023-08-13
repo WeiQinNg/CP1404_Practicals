@@ -7,5 +7,6 @@ Actual:    minutes
 """
 
 text = input(f"Text: ")
-
+words = text.split()
+words.sort()
 
