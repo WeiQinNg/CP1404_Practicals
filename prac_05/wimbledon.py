@@ -13,9 +13,19 @@ def main():
     """Read data file and display Wimbledon champions details."""
     records = get_records(FILENAME)
     champion_to_count, countries = process_records(records)
+    display_records(champion_to_count, countries)
+
+
+def display_records(champion_to_count, countries):
+    print("Wimbledon Champions: ")
+    for name, count in champion_to_count.items():
+        print(name, count)
+    print(f"\nThese {len(countries)} countries have won Wimbledon: ")
+    print(", ".join(country for country in sorted(countries)))
 
 
 def process_records(records):
+    """Save champions in dictionary and countries in set."""
     champion_to_count = {}
     countries = set()
     for record in records:
