@@ -19,3 +19,7 @@ class Guitar:
     def __str__(self):
         return f"{self.name} ({self.year} : ${self.cost})"
 
+    def get_age(self):
+        current_year = 2023
+        age = current_year - self.year
+        return age
