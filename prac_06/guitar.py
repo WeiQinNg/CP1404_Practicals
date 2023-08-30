@@ -1,5 +1,6 @@
 """CP1404/CP5632 Practical 6 - Guitar class."""
-
+CURRENT_YEAR = 2023
+VINTAGE_THRESHOLD =50
 
 class Guitar:
     """Guitars."""
@@ -22,14 +23,13 @@ class Guitar:
 
     def get_age(self):
         """Calculate age of a guitar."""
-        current_year = 2023
-        age = current_year - self.year
+        age = CURRENT_YEAR - self.year
         return age
 
     def is_vintage(self):
         """Check if guitar is vintage."""
         age = self.get_age()
-        if age >= 50:
+        if age >= VINTAGE_THRESHOLD:
             return True
         else:
             return False
