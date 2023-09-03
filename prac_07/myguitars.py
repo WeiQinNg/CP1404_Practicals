@@ -8,7 +8,7 @@ FILENAME = "guitars.csv"
 def main():
     """Read file with details of guitars, save as objects, and display."""
     guitars = []
-    in_file = open(FILENAME, 'r')
+    in_file = open(FILENAME, 'r', encoding="utf-8-sig")
     for line in in_file:
         parts = line.strip().split(',')
         guitar = Guitar(parts[0], int(parts[1]), float(parts[2]))
