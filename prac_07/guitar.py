@@ -1,4 +1,4 @@
-"""CP1404/CP5632 Practical 6 - Guitar class."""
+"""CP1404/CP5632 Practical 7 - Guitar class."""
 CURRENT_YEAR = 2023
 VINTAGE_THRESHOLD = 50
 
@@ -34,3 +34,7 @@ class Guitar:
             return True
         else:
             return False
+
+    def __lt__(self, other):
+        """Compare guitars by year."""
+        return self.year < other.year
