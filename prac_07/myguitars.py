@@ -10,6 +10,10 @@ def main():
     guitars = []
     in_file = open(FILENAME, 'r')
     for line in in_file:
-        parts = line.strip().strip(',')
-        guitar = Guitar(parts[0], int(parts[1]), int(parts[2]))
+        parts = line.strip().split(',')
+        guitar = Guitar(parts[0], int(parts[1]), float(parts[2]))
         guitars.append(guitar)
+    in_file.close()
+
+
+main()
