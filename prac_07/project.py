@@ -20,3 +20,7 @@ class Project:
     def __str__(self):
         """Return string representation of a project."""
         return f"{self.name}, {self.start_date}, {self.priority}, {self.cost:,.2f}, {self.completion}"
+
+    def __repr__(self):
+        """Return string representation of a project."""
+        return f"{self.name}, {self.start_date}, {self.priority}, {self.cost:,.2f}, {self.completion}"
