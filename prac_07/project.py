@@ -29,4 +29,7 @@ class Project:
         """Check if project has been completed."""
         return int(self.completion) == 100
 
+    def __lt__(self, other):
+        """Allows sorting of projects based on priority."""
+        return self.priority <= other.priority
 
