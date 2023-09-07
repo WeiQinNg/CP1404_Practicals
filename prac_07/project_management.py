@@ -42,7 +42,19 @@ def main():
                 except ValueError:
                     print("Invalid date format, please enter date as dd/mm/yy: ")
                     date = input("Show projects that start after date (dd/mm/yy): ")
-
+        elif menu_choice == "A":
+            print("Let's add a new project")
+            try:
+                name = input("Name: ")
+                start_date = input("Start date (dd/mm/yy): ")
+                priority = input("Priority: ")
+                cost = input("Cost estimate: ")
+                cost = int(cost.replace('$', ''))
+                completion = input("Percent complete: ")
+                new_project = Project(str(name), str(start_date), int(priority), float(cost), int(completion))
+                projects.append(new_project)
+            except ValueError:
+                print("Invalid input")
 
 def read_file(filename):
     """Read txt file, create project objects and store them in a list."""
