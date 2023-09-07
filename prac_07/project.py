@@ -33,3 +33,7 @@ class Project:
         """Allows sorting of projects based on priority."""
         return self.priority <= other.priority
 
+    def compare_date(self, input_date):
+        """Compare date specified by user with project start date."""
+        input_date = datetime.datetime.strptime(input_date, "%d/%m/%Y").date()
+        return self.start_date >= input_date
