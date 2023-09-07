@@ -38,6 +38,7 @@ def main():
                 except ValueError:
                     print("Invalid date format, please enter date as dd/mm/yy: ")
                     date = input("Show projects that start after date (dd/mm/yy): ")
+                    filtered_projects = filter_project(date, projects)
 
 
 def read_file(filename):
@@ -86,6 +87,21 @@ def filter_project(date, projects):
         if project.compare_date(date):
             filtered_projects.append(project)
     return filtered_projects
+
+
+def sort_project(projects):
+    """Sort projects according to project start date."""
+    dates = []
+    for project in projects:
+        if project.start_date not in dates:
+            dates.append(project.start_date)
+    dates.sort()
+    sorted_projects = []
+    for date in dates:
+        for project in projects:
+            if project.start_date == date:
+                sorted_projects.append(project)
+    return sorted_projects
 
 
 main()
