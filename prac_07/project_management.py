@@ -9,7 +9,9 @@ MENU = "- (L)oad projects\n- (S)ave projects\n- (D)isplay projects\n- (F)ilter p
 
 
 def main():
-    menu_choice = input(">>> ")
+    projects = read_file('projects.txt')
+    print(MENU)
+    menu_choice = input(">>> ").upper()
     while menu_choice != "Q":
         if menu_choice == "L":
             filename = input("Enter filename: ")
@@ -19,6 +21,9 @@ def main():
                     print(projects)
                 except FileNotFoundError:
                     print('Invalid filename')
+        elif menu_choice == "S":
+            filename = input("Enter filename to save to: ")
+            save_file(projects, filename)
 
 
 def read_file(filename):
@@ -27,12 +32,16 @@ def read_file(filename):
     with open(filename, 'r') as in_file:
         in_file.readline()
         for line in in_file:
-            parts = line.strip().replace("\t", ",")
-            parts = parts.split(",")
+            parts = line.strip().split('\t')
             project = Project(parts[0], parts[1], int(parts[2]), float(parts[3]), int(parts[4]))
             projects.append(project)
     return projects
 
 
+def save_file(projects, filename):
+    """Save current information to user specified file."""
+    with open(filename, 'w') as out_file:
+        for project in projects:
+            print(f"{project.name}\t{project.start_date}\t{project.priority}\t{project.cost}\t{project.completion}")
 
 main()
