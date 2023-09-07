@@ -14,9 +14,15 @@ def main():
         if menu_choice == "L":
             filename = input("Enter filename: ")
             if filename != '':
+                try:
+                    projects = read_file(filename)
+                    print(projects)
+                except FileNotFoundError:
+                    print('Invalid filename')
 
 
 def read_file(filename):
+    """Read txt file, create project objects and store them in a list."""
     projects = []
     with open(filename, 'r') as in_file:
         in_file.readline()
