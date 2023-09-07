@@ -31,14 +31,17 @@ def main():
             print("Completed projects: ")
             display_project(completed_projects)
         elif menu_choice == "F":
-            is_valid = False
+            is_valid = False    # Add a variable to initiate while loop
             while not is_valid:
                 try:
                     date = input("Show projects that start after date (dd/mm/yy): ")
+                    filtered_projects = filter_project(date, projects)
+                    sorted_projects = sort_project(filtered_projects)
+                    display_project(sorted_projects)
+                    is_valid = True
                 except ValueError:
                     print("Invalid date format, please enter date as dd/mm/yy: ")
                     date = input("Show projects that start after date (dd/mm/yy): ")
-                    filtered_projects = filter_project(date, projects)
 
 
 def read_file(filename):
