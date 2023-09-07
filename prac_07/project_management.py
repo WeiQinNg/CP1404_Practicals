@@ -24,6 +24,10 @@ def main():
         elif menu_choice == "S":
             filename = input("Enter filename to save to: ")
             save_file(projects, filename)
+        elif menu_choice == "D":
+            completed_projects, incomplete_projects = process_project(projects)
+            print("Incomplete projects: ")
+            print("Completed projects: ")
 
 
 def read_file(filename):
@@ -43,5 +47,20 @@ def save_file(projects, filename):
     with open(filename, 'w') as out_file:
         for project in projects:
             print(f"{project.name}\t{project.start_date}\t{project.priority}\t{project.cost}\t{project.completion}")
+
+
+def process_project(projects):
+    """Store completed and incomplete projects in separate lists."""
+    completed_projects = []
+    incomplete_projects = []
+    for project in projects:
+        if project.is_complete():
+            completed_projects.append(project)
+        else:
+            incomplete_projects.append(project)
+    completed_projects.sort()
+    incomplete_projects.sort()
+    return completed_projects, incomplete_projects
+
 
 main()
