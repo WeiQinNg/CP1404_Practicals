@@ -30,7 +30,14 @@ def main():
             display_project(incomplete_projects)
             print("Completed projects: ")
             display_project(completed_projects)
-
+        elif menu_choice == "F":
+            is_valid = False
+            while not is_valid:
+                try:
+                    date = input("Show projects that start after date (dd/mm/yy): ")
+                except ValueError:
+                    print("Invalid date format, please enter date as dd/mm/yy: ")
+                    date = input("Show projects that start after date (dd/mm/yy): ")
 
 
 def read_file(filename):
@@ -70,6 +77,15 @@ def display_project(projects):
     """Display information of each project."""
     for number, project in enumerate(projects):
         print(f"{number + 1}, {project}")
+
+
+def filter_project(date, projects):
+    """Filter and return projects that start after specified date."""
+    filtered_projects = []
+    for project in projects:
+        if project.compare_date(date):
+            filtered_projects.append(project)
+    return filtered_projects
 
 
 main()
