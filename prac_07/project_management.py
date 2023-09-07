@@ -27,7 +27,10 @@ def main():
         elif menu_choice == "D":
             completed_projects, incomplete_projects = process_project(projects)
             print("Incomplete projects: ")
+            display_project(incomplete_projects)
             print("Completed projects: ")
+            display_project(completed_projects)
+
 
 
 def read_file(filename):
@@ -61,6 +64,12 @@ def process_project(projects):
     completed_projects.sort()
     incomplete_projects.sort()
     return completed_projects, incomplete_projects
+
+
+def display_project(projects):
+    """Display information of each project."""
+    for number, project in enumerate(projects):
+        print(f"{number + 1}, {project}")
 
 
 main()
