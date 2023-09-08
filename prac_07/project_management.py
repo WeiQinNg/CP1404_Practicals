@@ -31,7 +31,7 @@ def main():
             print("Completed projects: ")
             display_project(completed_projects)
         elif menu_choice == "F":
-            is_valid = False    # Add a variable to initiate while loop
+            is_valid = False  # Add a variable to initiate while loop
             while not is_valid:
                 try:
                     date = input("Show projects that start after date (dd/mm/yy): ")
@@ -73,11 +73,12 @@ def main():
                     project_choice.update_priority(new_priority)
             except KeyError:
                 print("Invalid choice")
-            else:
-                print("Invalid choice")
-            print(MENU)
-            menu_choice = input(">>> ").upper()
-        print("Thank you for using custom-built project management software.")
+        else:
+            print("Invalid choice")
+        print(MENU)
+        menu_choice = input(">>> ").upper()
+    print("Thank you for using custom-built project management software.")
+
 
 def read_file(filename):
     """Read txt file, create project objects and store them in a list."""
@@ -96,7 +97,8 @@ def save_file(projects, filename):
     with open(filename, 'w') as out_file:
         print("Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage", file=out_file)
         for project in projects:
-            print(f"{project.name}\t{project.start_date}\t{project.priority}\t{project.cost}\t{project.completion}", file=out_file)
+            print(f"{project.name}\t{project.start_date}\t{project.priority}\t{project.cost}\t{project.completion}",
+                  file=out_file)
 
 
 def process_project(projects):
@@ -116,7 +118,7 @@ def process_project(projects):
 def display_project(projects):
     """Display information of each project."""
     for number, project in enumerate(projects):
-        print(f"{number + 1}, {project}")
+        print(f"{number} {project}")
 
 
 def filter_project(date, projects):
