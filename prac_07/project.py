@@ -37,3 +37,7 @@ class Project:
         """Compare date specified by user with project start date."""
         input_date = datetime.datetime.strptime(input_date, "%d/%m/%Y").date()
         return self.start_date >= input_date
+
+    def update_percentage(self, value):
+        """Update a project's completion percentage."""
+        self.completion = int(value)
