@@ -41,3 +41,7 @@ class Project:
     def update_percentage(self, value):
         """Update a project's completion percentage."""
         self.completion = int(value)
+
+    def update_priority(self, value):
+        """Update a project's priority."""
+        self.priority = int(value)
