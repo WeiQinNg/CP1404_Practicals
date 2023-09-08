@@ -73,7 +73,11 @@ def main():
                     project_choice.update_priority(new_priority)
             except KeyError:
                 print("Invalid choice")
-
+            else:
+                print("Invalid choice")
+            print(MENU)
+            menu_choice = input(">>> ").upper()
+        print("Thank you for using custom-built project management software.")
 
 def read_file(filename):
     """Read txt file, create project objects and store them in a list."""
@@ -90,8 +94,9 @@ def read_file(filename):
 def save_file(projects, filename):
     """Save current information to user specified file."""
     with open(filename, 'w') as out_file:
+        print("Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage", file=out_file)
         for project in projects:
-            print(f"{project.name}\t{project.start_date}\t{project.priority}\t{project.cost}\t{project.completion}")
+            print(f"{project.name}\t{project.start_date}\t{project.priority}\t{project.cost}\t{project.completion}", file=out_file)
 
 
 def process_project(projects):
