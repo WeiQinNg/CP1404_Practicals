@@ -62,7 +62,7 @@ def main():
             for number, project in enumerate(projects):
                 number_to_project[number] = project
             try:
-                project_number = input("Project choice: ")
+                project_number = int(input("Project choice: "))
                 project_choice = number_to_project[project_number]
                 print(project_choice)
                 new_percent = input("New Percentage: ")
@@ -72,7 +72,7 @@ def main():
                 if new_priority != "":
                     project_choice.update_priority(new_priority)
             except KeyError:
-                print("Invalid choice")
+                print("Invalid project number")
         else:
             print("Invalid choice")
         print(MENU)
