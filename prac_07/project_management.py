@@ -55,6 +55,25 @@ def main():
                 projects.append(new_project)
             except ValueError:
                 print("Invalid input")
+        elif menu_choice == "U":
+            projects = sort_project(projects)
+            display_project(projects)
+            number_to_project = {}
+            for number, project in enumerate(projects):
+                number_to_project[number] = project
+            try:
+                project_number = input("Project choice: ")
+                project_choice = number_to_project[project_number]
+                print(project_choice)
+                new_percent = input("New Percentage: ")
+                new_priority = input("New Priority: ")
+                if new_percent != "":
+                    project_choice.update_percentage(new_percent)
+                if new_priority != "":
+                    project_choice.update_priority(new_priority)
+            except KeyError:
+                print("Invalid choice")
+
 
 def read_file(filename):
     """Read txt file, create project objects and store them in a list."""
