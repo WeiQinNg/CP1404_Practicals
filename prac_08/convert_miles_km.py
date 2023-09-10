@@ -1,13 +1,14 @@
 """
 CP1404 Week 11 Workshop - GUI program to convert miles to kilometres
-Lindsay Ward, IT@JCU
-06/10/2015
+Practical 08
+Ng Wei Qin
+10 Sept 2023
 """
 
 from kivy.app import App
 from kivy.lang import Builder
 
-__author__ = 'Lindsay Ward'
+__author__ = 'Ng Wei Qin'
 
 MILES_TO_KM = 1.60934
 
