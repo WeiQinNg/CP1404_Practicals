@@ -27,3 +27,4 @@ class DynamicLabelsApp(App):
             # create a button for each data entry, specifying the text
             temp_label = Button(text=name)
             temp_label.bind(on_press=self.press_entry)
+            self.root.ids.main_labels.add_widget(temp_label)
