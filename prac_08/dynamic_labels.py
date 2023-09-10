@@ -26,7 +26,7 @@ class DynamicLabelsApp(App):
     def create_widgets(self):
         """Create labels from data and add them to the GUI."""
         for name in self.names:
-            # create a button for each data entry, specifying the text
+            # create a label for each data entry, specifying the text
             temp_label = Label(text=name)
             self.root.ids.main_labels.add_widget(temp_label)
 
