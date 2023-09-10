@@ -5,6 +5,7 @@ Ng Wei Qin
 """
 from kivy.app import App
 from kivy.lang import Builder
+from kivy.uix.button import Button
 
 
 class DynamicLabelsApp(App):
@@ -21,3 +22,8 @@ class DynamicLabelsApp(App):
         self.create_widgets()
 
     def create_widgets(self):
+        """Create labels from data and add them to the GUI."""
+        for name in self.names:
+            # create a button for each data entry, specifying the text
+            temp_label = Button(text=name)
+            temp_label.bind(on_press=self.press_entry)
