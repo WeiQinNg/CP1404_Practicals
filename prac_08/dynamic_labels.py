@@ -14,3 +14,9 @@ class DynamicLabelsApp(App):
         """Construct a name from a list of names."""
         names = ["Alice", "Bob", "Charlie"]
         self.names = names
+
+    def build(self):
+        """Build the Kivy GUI."""
+        self.title = "Dynamic Labels"
+        self.root = Builder.load_file('dynamic_labels.kv')
+        self.create_widgets()
