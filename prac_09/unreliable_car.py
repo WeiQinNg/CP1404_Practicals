@@ -10,7 +10,8 @@ from car import Car
 class UnreliableCar:
     """Specialised version of a Car that drives based on a percentage chance."""
 
-    def __init__(self, name="", fuel=0, reliability=0.0):
-        self.name = name
-        self.fuel = fuel
+    def __init__(self, name, fuel, reliability):
+        """Initialise an UnreliableCar."""
+        super.__init__(name, fuel)
         self.reliability = reliability
+
