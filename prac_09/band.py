@@ -4,13 +4,17 @@ Ng Wei Qin
 16 Sept 2023
 Band class
 """
+from musician import Musician
 
 
 class Band:
     """Band class."""
 
     def __init__(self, name=""):
-        """Initialise a band with a name and an empty musician lineup."""
+        """Initialise a Band with a name and an empty musician lineup."""
         self.name = name
         self.musicians = []
 
+    def __str__(self):
+        """Return a string representation of Band."""
+        return f"{self.name} ({[self.musician for self.musician in self.musicians]})"
