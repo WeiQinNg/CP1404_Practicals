@@ -9,6 +9,7 @@ from taxi import Taxi
 
 class SilverServiceTaxi(Taxi):
     """Specialised version of a Car that includes fare costs based on fanciness."""
+    flag_fall = 4.50
 
     def __init__(self, name, fuel, fanciness):
         """Initialise a SilverService Taxi."""
