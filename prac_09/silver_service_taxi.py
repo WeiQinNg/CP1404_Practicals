@@ -9,11 +9,15 @@ from taxi import Taxi
 
 class SilverServiceTaxi(Taxi):
     """Specialised version of a Car that includes fare costs based on fanciness."""
-    flag_fall = 4.50
+    flagfall = 4.50
 
     def __init__(self, name, fuel, fanciness):
         """Initialise a SilverService Taxi."""
         super().__init__(name, fuel)
         self.fanciness = fanciness
         self.price_per_km *= fanciness
+
+    def get_fare(self):
+        """Return the price for the taxi trip."""
+        return self.flagfall + super().get_fare()
 
