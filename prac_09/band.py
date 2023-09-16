@@ -9,3 +9,8 @@ Band class
 class Band:
     """Band class."""
 
+    def __init__(self, name=""):
+        """Initialise a band with a name and an empty musician lineup."""
+        self.name = name
+        self.musicians = []
+
