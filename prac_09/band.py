@@ -18,3 +18,7 @@ class Band:
     def __str__(self):
         """Return a string representation of Band."""
         return f"{self.name} ({[self.musician for self.musician in self.musicians]})"
+
+    def add(self, musician):
+        """Add a musician to the Band lineup."""
+        self.musicians.append(musician)
