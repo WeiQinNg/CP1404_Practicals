@@ -7,7 +7,12 @@ SilverServiceTaxi class
 from taxi import Taxi
 
 
-class SilverServiceTaxi:
+class SilverServiceTaxi(Taxi):
     """Specialised version of a Car that includes fare costs based on fanciness."""
 
-    
+    def __init__(self, name, fuel, fanciness):
+        """Initialise a SilverService Taxi."""
+        super().__init__(name, fuel)
+        self.fanciness = fanciness
+        self.price_per_km *= fanciness
+
