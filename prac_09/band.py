@@ -4,7 +4,6 @@ Ng Wei Qin
 16 Sept 2023
 Band class
 """
-from musician import Musician
 
 
 class Band:
@@ -17,7 +16,7 @@ class Band:
 
     def __str__(self):
         """Return a string representation of Band."""
-        return f"{self.name} ({[self.musician for self.musician in self.musicians]})"
+        return f"{self.name} ({self.musicians})"
 
     def add(self, musician):
         """Add a musician to the Band lineup."""
