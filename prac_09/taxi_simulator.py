@@ -13,14 +13,13 @@ MENU = "q)uit, c)hoose taxi, d)rive"
 def main():
     print("Let's drive!")
     menu_choice = input(">>> ").lower()
+    total_bill = 0
     while menu_choice != "q":
-        total_bill = 0
         taxis = [Taxi("Prius", 100), SilverServiceTaxi("Limo", 100, 2), SilverServiceTaxi("Hummer", 200, 4)]
         current_taxi = None
         if menu_choice == "c":
             print("Taxis available:")
-            for number, taxi in enumerate(taxis):
-                print(f"{number} - {taxi}")
+            display_taxi(taxis)
             try:
                 index_choice = int(input("Choose taxi: "))
             except IndexError:
@@ -37,6 +36,14 @@ def main():
         print(f"Bill to date: ${total_bill:.2f}")
         print(MENU)
         menu_choice = input(">>> ").lower()
+    print(f"Total trip cost: ${total_bill}")
+    print("Taxis are now:")
+    display_taxi(taxis)
+
+
+def display_taxi(taxis):
+    for number, taxi in enumerate(taxis):
+        print(f"{number} - {taxi}")
 
 
 main()
