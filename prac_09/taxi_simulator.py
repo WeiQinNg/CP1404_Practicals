@@ -23,11 +23,11 @@ def main():
             try:
                 index_choice = input("Choose taxi: ")
                 current_taxi = taxis[index_choice]
-            except ValueError:
+            except IndexError:
                 print("Invalid taxi choice")
         elif menu_choice == "d":
             distance = int(input("Drive how far? "))
-
+            current_taxi.
 
 
 
