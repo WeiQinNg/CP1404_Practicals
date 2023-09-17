@@ -14,18 +14,18 @@ def main():
     print("Let's drive!")
     menu_choice = input(">>> ").lower()
     total_bill = 0
+    current_taxi = None
     while menu_choice != "q":
         taxis = [Taxi("Prius", 100), SilverServiceTaxi("Limo", 100, 2), SilverServiceTaxi("Hummer", 200, 4)]
-        current_taxi = None
         if menu_choice == "c":
             print("Taxis available:")
             display_taxi(taxis)
             try:
                 index_choice = int(input("Choose taxi: "))
+                current_taxi = taxis[index_choice]
             except IndexError:
                 print("Invalid taxi choice")
         elif menu_choice == "d":
-            current_taxi = taxis[index_choice]
             distance = int(input("Drive how far? "))
             current_taxi.drive(distance)
             current_bill = current_taxi.get_fare()
