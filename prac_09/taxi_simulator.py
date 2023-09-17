@@ -22,12 +22,15 @@ def main():
                 print(f"{number} - {taxi}")
             try:
                 index_choice = int(input("Choose taxi: "))
-                current_taxi = taxis[index_choice]
             except IndexError:
                 print("Invalid taxi choice")
         elif menu_choice == "d":
+            current_taxi = taxis[index_choice]
             distance = int(input("Drive how far? "))
-            current_taxi.get_fare(distance)
+            current_taxi.drive(distance)
+            current_bill = current_taxi.get_fare()
+            print(f"Your Prius trip cost you ${current_bill:.2f}")
+            total_bill += current_bill
         else:
             print("Invalid option")
         print(f"Bill to date: ${total_bill:.2f}")
