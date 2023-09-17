@@ -21,13 +21,13 @@ def main():
             for number, taxi in enumerate(taxis):
                 print(f"{number} - {taxi}")
             try:
-                index_choice = input("Choose taxi: ")
+                index_choice = int(input("Choose taxi: "))
                 current_taxi = taxis[index_choice]
             except IndexError:
                 print("Invalid taxi choice")
         elif menu_choice == "d":
             distance = int(input("Drive how far? "))
-            current_taxi.
+            current_taxi.getfare(distance)
 
 
 
