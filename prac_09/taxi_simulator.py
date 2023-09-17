@@ -11,6 +11,7 @@ MENU = "q)uit, c)hoose taxi, d)rive"
 
 
 def main():
+    """Program that drives taxis and calculates total bill."""
     print("Let's drive!")
     menu_choice = input(">>> ").lower()
     total_bill = 0
@@ -42,6 +43,7 @@ def main():
 
 
 def display_taxi(taxis):
+    """Display list of taxis in number order."""
     for number, taxi in enumerate(taxis):
         print(f"{number} - {taxi}")
 
