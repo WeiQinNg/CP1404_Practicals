@@ -27,8 +27,12 @@ def main():
                 print("Invalid taxi choice")
         elif menu_choice == "d":
             distance = int(input("Drive how far? "))
-            current_taxi.getfare(distance)
-
+            current_taxi.get_fare(distance)
+        else:
+            print("Invalid option")
+        print(f"Bill to date: ${total_bill:.2f}")
+        print(MENU)
+        menu_choice = input(">>> ").lower()
 
 
 main()
