@@ -29,7 +29,7 @@ def main():
             distance = int(input("Drive how far? "))
             current_taxi.drive(distance)
             current_bill = current_taxi.get_fare()
-            print(f"Your Prius trip cost you ${current_bill:.2f}")
+            print(f"Your {current_taxi.name} trip cost you ${current_bill:.2f}")
             total_bill += current_bill
         else:
             print("Invalid option")
