@@ -55,6 +55,23 @@ def run_tests():
     assert test_car2.fuel == 0
 
 
+def format_phrase(phrase):
+    """Format a phrase as a sentence."""
+    return phrase
+
+
+def is_sentence(sentence):
+    """Determine if sentence is in sentence case.
+    >>> is_sentence(format_phrase("hello"))
+    True
+    >>> is_sentence(format_phrase("It is an ex parrot"))
+    True
+    >>> is_sentence("this string is not in sentence case")
+    False
+    """
+    return sentence[0].isupper() and sentence[1].islower() and sentence[-1] == "."
+
+
 run_tests()
 
 # TODO: 3. Uncomment the following line and run the doctests
