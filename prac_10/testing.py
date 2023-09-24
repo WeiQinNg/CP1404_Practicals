@@ -15,8 +15,7 @@ def repeat_string(s, n):
         strings.append(s)
     return " ".join(strings)
 
-
-# def is_long_word(word, length=5):
+    # def is_long_word(word, length=5):
     """
     Determine if the word is as long or longer than the length passed in
     >>> is_long_word("not")
@@ -50,6 +49,9 @@ def run_tests():
     # using the value passed in or the default
     # You should test both of these
     test_car = Car(fuel=10)
+    assert test_car.fuel == 10
+    test_car2 = Car()
+    assert test_car2.fuel == 0
 
 
 run_tests()
