@@ -4,7 +4,7 @@ Testing demo using assert and doctest
 24 Sep 2023
 """
 
-# import doctest
+import doctest
 from prac_06.car import Car
 
 
@@ -15,7 +15,8 @@ def repeat_string(s, n):
         strings.append(s)
     return " ".join(strings)
 
-    # def is_long_word(word, length=5):
+
+def is_long_word(word, length=5):
     """
     Determine if the word is as long or longer than the length passed in
     >>> is_long_word("not")
@@ -25,7 +26,7 @@ def repeat_string(s, n):
     >>> is_long_word("Python", 6)
     True
     """
-    return len(word) > length
+    return len(word) >= length
 
 
 def run_tests():
@@ -58,7 +59,7 @@ run_tests()
 
 # TODO: 3. Uncomment the following line and run the doctests
 # (PyCharm may see your >>> doctest comments and run doctests anyway.)
-# doctest.testmod()
+doctest.testmod()
 
 # TODO: 4. Fix the failing is_long_word function
 # (don't change the tests, change the function!)
