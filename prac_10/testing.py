@@ -4,17 +4,19 @@ Testing demo using assert and doctest
 24 Sep 2023
 """
 
-import doctest
+# import doctest
 from prac_06.car import Car
 
 
 def repeat_string(s, n):
     """Repeat string s, n times, with spaces in between."""
-    string = s * n
-    return " ".join(string)
+    strings = []
+    for i in range(n):
+        strings.append(s)
+    return " ".join(strings)
 
 
-def is_long_word(word, length=5):
+# def is_long_word(word, length=5):
     """
     Determine if the word is as long or longer than the length passed in
     >>> is_long_word("not")
