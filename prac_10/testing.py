@@ -57,7 +57,12 @@ def run_tests():
 
 def format_phrase(phrase):
     """Format a phrase as a sentence."""
-    return phrase
+    phrase = phrase.capitalize()
+    if phrase[-1] == ".":
+        sentence = phrase
+    else:
+        sentence = f"{phrase}."
+    return sentence
 
 
 def is_sentence(sentence):
