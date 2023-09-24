@@ -11,7 +11,10 @@ def main():
     title = input("Title: ").title()
     while title != "":
         try:
-            print(wikipedia.summary(title))
+            current_page = wikipedia.page(title, auto_suggest=False)
+            print(current_page.title)
+            print(current_page.summary)
+            print(current_page.url)
         except wikipedia.exceptions.DisambiguationError as e:
             print("Please specify the title from the list:")
             print(e.options)
